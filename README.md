@@ -240,7 +240,7 @@
     <!-- About Section -->
     <section id="about">
         <h2>About UCF DARKSTAR</h2>
-        <p>UCF DARKSTAR is your go-to destination for epic gaming streams, featuring high-energy gameplay from a variety of titles including FPS, RPGs, and indie gems. Join me as I dive deep into the worlds of virtual worlds, share pro tips, and connect with the community.</p>
+        <p>test UCF DARKSTAR is your go-to destination for epic gaming streams, featuring high-energy gameplay from a variety of titles including FPS, RPGs, and indie gems. Join me as I dive deep into the worlds of virtual worlds, share pro tips, and connect with the community.</p>
         <p>With years of gaming experience and a passion for sci-fi themes, UCF DARKSTAR brings a unique twist to streaming. Whether you're here for the laughs, the thrills, or the strategies, there's always something exciting happening!</p>
     </section>
 
