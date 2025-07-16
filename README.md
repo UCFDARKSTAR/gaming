@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,7 +18,7 @@
         body.dark-theme {
             background-color: #121212;
             color: #e0e0e0;
-            background-image: url('https://images.unsplash.com/photo-1475274047050-1d0c52c5a846?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1965&q=80');
+            background-image: url('ucf_darkstar_logo.jpg'); /* Replace this with the path or URL to your uploaded image */
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
