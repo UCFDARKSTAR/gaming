@@ -116,26 +116,28 @@
             height: 500px;
         }
 
-        #gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
+        #socials {
             background-color: rgba(30, 31, 31, 0.8);
-            padding: 2rem;
+            text-align: center;
         }
 
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
+        #socials ul {
+            list-style: none;
+            padding: 0;
         }
 
-        .gallery-item img {
-            width: 100%;
-            transition: transform 0.3s;
+        #socials li {
+            margin: 1rem 0;
         }
 
-        .gallery-item:hover img {
-            transform: scale(1.1);
+        #socials a {
+            color: #ff4081;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        #socials a:hover {
+            text-decoration: underline;
         }
 
         #contact {
@@ -186,7 +188,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#streams">Streams</a></li>
-            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#socials">Socials</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -222,13 +224,14 @@
         <p>Follow me on Twitch: <a href="https://www.twitch.tv/ucf_darkstar" style="color: #ff4081;">twitch.tv/ucf_darkstar</a></p>
     </section>
 
-    <section id="gallery">
-        <h2>Gallery</h2>
-        <p>Screenshots and highlights from EVE Frontier (using space-themed images as placeholders)</p>
-        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1447433589675-4aaa569f3e05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80" alt="Space Nebula 1"></div>
-        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1539248091023-6a5b0b7c3994?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80" alt="Space Stars"></div>
-        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1447433819943-74a20887a81e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80" alt="Galaxy View"></div>
-        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1462331940025-496df16fa74b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" alt="Nebula 2"></div>
+    <section id="socials">
+        <h2>My Socials</h2>
+        <p>Follow me on these platforms for more content and updates:</p>
+        <ul>
+            <li><a href="https://x.com/ucf_darkstar">X (@ucf_darkstar)</a></li>
+            <li><a href="https://www.youtube.com/@ucf_darkstar">YouTube (@ucf_darkstar)</a></li>
+            <li><a href="https://www.twitch.tv/ucf_darkstar">Twitch (ucf_darkstar)</a></li>
+        </ul>
     </section>
 
     <section id="contact">
@@ -270,14 +273,6 @@
                 e.preventDefault();
                 alert('Form submitted! (Placeholder)');
                 form.reset();
-            });
-
-            // Gallery lightbox placeholder
-            const galleryItems = document.querySelectorAll('.gallery-item');
-            galleryItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    alert('Opening image in lightbox (placeholder)');
-                });
             });
         });
     </script>
