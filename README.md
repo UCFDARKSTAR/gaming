@@ -18,7 +18,7 @@
         body.dark-theme {
             background-color: #121212;
             color: #e0e0e0;
-            background-image: url([https://wallpapershome.com/images/pages/pic_v/27202.jpg);
+            background-image: url([https://wallpapershome.com/images/pages/pic_v/27202.JPG);
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
