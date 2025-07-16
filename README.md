@@ -1,336 +1,297 @@
-<!DOCTYPE html>
+<!DOCTYPE html -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UCF DARKSTAR - Gaming Stream</title>
+    <title>UCF DARKSTAR - EVE Frontier Gaming & Streaming</title>
+    <link rel="stylesheet" href="favicon.ico" type="image/x-icon">
     <style>
-        /* Reset and Global Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-
+        /* Global Styles */
         body {
-            background-color: #121212; /* Dark theme for gaming vibe */
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
             color: #ffffff;
+            color: #000000;
             line-height: 1.6;
         }
 
-        /* Header Section */
-        header {
-            background: linear-gradient(to right, #000000, #1a1a1a);
-            padding: 20px;
-            text-align: center;
-            position: sticky;
+        /* Dark Theme */
+        body.dark-theme {
+            background-color: #121212;
+            color: #e0e9e0;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #1f1f1f;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        }
-
-        header h1 {
-            font-size: 2.5em;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            animation: glow 2s infinite alternate;
-        }
-
-        @keyframes glow {
-            from { text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff; }
-            to { text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff; }
+            box-shadow: 0 2px 10px rgba(0, 0, 0,0.5);
         }
 
         nav ul {
             list-style: none;
-            margin-top: 10px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
         }
 
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
+        nav li {
+            margin: 0 1rem;
         }
 
-        nav ul li a {
+        nav a {
             color: #ffffff;
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s;
         }
 
-        nav ul li a:hover {
-            color: #ff00ff;
+        nav a:hover {
+            color: #ff4081;
         }
 
-        /* Hero Section with Stream Embed */
-        #hero {
-            background: url('https://via.placeholder.com/1920x1080?text=Gaming+Background') no-repeat center/cover;
-            height: 80vh;
+        /* Hero Section */
+        .hero {
+            background: url('https://via.placeholder.com/1920x800/121212/ffffff?text=EVE+Frontier+Universe') no-repeat center/cover;
+            height: 100vh;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             text-align: center;
-            position: relative;
+            color: #ffffff;
         }
 
-        #hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6); /* Overlay for readability */
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
         }
 
-        #hero h2 {
-            font-size: 3em;
-            z-index: 1;
-            margin-bottom: 20px;
+        .hero p {
+            font-size: 1.5rem;
         }
 
-        #stream-embed {
-            width: 80%;
-            max-width: 800px;
-            height: 450px;
-            border: 2px solid #ff00ff;
-            border-radius: 10px;
-            overflow: hidden;
-            z-index: 1;
+        .hero button {
+            background-color: #ff4081;
+            border: none;
+            padding: 1rem 2rem;
+            color: #ffffff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s;
         }
 
-        /* About Section */
-        #about {
-            padding: 50px 20px;
-            text-align: center;
+        .hero button:hover {
+            background-color: #d81b60;
         }
 
-        #about h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            color: #00ffff;
-        }
-
-        #about p {
-            max-width: 800px;
-            margin: 0 auto 20px;
-        }
-
-        /* Schedule Section */
-        #schedule {
-            padding: 50px 20px;
-            background-color: #1a1a1a;
-        }
-
-        #schedule h2 {
-            text-align: center;
-            font-size: 2em;
-            margin-bottom: 30px;
-            color: #ff00ff;
-        }
-
-        .schedule-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .schedule-item {
-            background: #222222;
-            padding: 20px;
-            border-radius: 10px;
+        #about {
+            background-color: #1e1f1f;
+        }
+
+        #streams {
             text-align: center;
+        }
+
+        .twitch-embed {
+            margin: 2rem auto;
+            width: 80%;
+            height: 500px;
+        }
+
+        #gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            width: 100%;
             transition: transform 0.3s;
         }
 
-        .schedule-item:hover {
-            transform: scale(1.05);
+        .gallery-item:hover img {
+            transform: scale(1.1);
         }
 
-        .schedule-item h3 {
-            color: #00ffff;
-            margin-bottom: 10px;
-        }
-
-        /* Social Links Section */
-        #social {
-            padding: 50px 20px;
-            text-align: center;
-        }
-
-        #social h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            color: #ff00ff;
-        }
-
-        .social-icons {
+        #contact form {
             display: flex;
-            justify-content: center;
-            gap: 20px;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
         }
 
-        .social-icons a {
-            color: #ffffff;
-            font-size: 2em;
-            transition: color 0.3s;
+        input, textarea {
+            padding: 1rem;
+            background-color: #333;
+            border: 1px solid #444;
+            color: #fff;
         }
 
-        .social-icons a:hover {
-            color: #00ffff;
+        button[type="submit"] {
+            background-color: #ff4081;
+            border: none;
+            padding: 1rem;
+            color: pointer;
+            cursor: pointer;
         }
 
         /* Footer */
         footer {
-            background: #000000;
-            padding: 20px;
+            background-color: #1f1f1f;
+            padding: 1rem;
             text-align: center;
-            font-size: 0.8em;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
 
-        /* Responsive Design */
+        /* JS for interactivity */
+        /* This will be in separate file, but inline for now */
+        <script>
+            // Simple section scrolling
+            document.addEventListener('DOMContentLoaded', () => {
+                const navLinks = document.querySelectorAll('nav a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const targetId = link.getAttribute('href').substring(1);
+                        const target = document.getElementById(targetId');
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+
+                // Form submission placeholder
+                const form = document.querySelector('#contact form');
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    alert('Form submitted! (Placeholder)');
+                    form.reset();
+                });
+
+                // Gallery lightbox placeholder
+                const galleryItems = document.querySelectorAll('.gallery-item');
+                galleryItems.forEach(item => {
+                    item.addEventListener('click', () => {
+                        alert('Opening image in lightbox (placeholder)');
+                    });
+                });
+            });
+        </script>
+
+        /* Media Queries for Responsiveness */
         @media (max-width: 768px) {
-            #hero {
-                height: 60vh;
+            nav ul {
+                flex-direction: column;
             }
 
-            #stream-embed {
+            nav li {
+                margin: 0.5rem 0;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .twitch-embed {
                 width: 100%;
-                height: 300px;
             }
-
-            header h1 {
-                font-size: 2em;
-            }
-        }
-
-        /* JavaScript Enhancements */
-        .hidden {
-            display: none;
         }
     </style>
 </head>
-<body>
+<body class="dark-theme">
 
-    <!-- Header -->
-    <header>
-        <h1>UCF DARKSTAR Gaming Stream</h1>
-        <nav>
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#schedule">Schedule</a></li>
-                <li><a href="#social">Social</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#streams">Streams</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <!-- Hero Section with Stream Embed (Replace the iframe src with your actual stream URL, e.g., Twitch embed) -->
-    <section id="hero">
-        <h2>Welcome to UCF DARKSTAR</h2>
-        <div id="stream-embed">
-            <iframe src="https://player.twitch.tv/?channel=your_twitch_channel&parent=yourwebsite.com" frameborder="0" allowfullscreen="true" scrolling="no" height="100%" width="100%"></iframe>
+    <section id="home" class="hero">
+        <div>
+            <h1>Welcome to UCF DARKSTAR</h1>
+            <p>Your hub for EVE Frontier adventures and Twitch streams</p>
+            <button onclick="document.getElementById('streams').scrollIntoView({behavior: 'smooth'})">Watch Live</button>
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about">
         <h2>About UCF DARKSTAR</h2>
-        <p>test UCF DARKSTAR is your go-to destination for epic gaming streams, featuring high-energy gameplay from a variety of titles including FPS, RPGs, and indie gems. Join me as I dive deep into the worlds of virtual worlds, share pro tips, and connect with the community.</p>
-        <p>With years of gaming experience and a passion for sci-fi themes, UCF DARKSTAR brings a unique twist to streaming. Whether you're here for the laughs, the thrills, or the strategies, there's always something exciting happening!</p>
+        <p>I'm UCF DARKSTAR, a passionate player of EVE Frontier, the ultimate space exploration and combat game. I spend my time navigating the vast universe, engaging in epic battles, and building my fleet.</p>
+        <p>When I'm not in-game, I stream my gameplay on Twitch, sharing tips, strategies, and live reactions with my community. Join me for thrilling sessions and let's conquer the frontier together!</p>
     </section>
 
-    <!-- Schedule Section -->
-    <section id="schedule">
-        <h2>Stream Schedule</h2>
-        <div class="schedule-grid">
-            <div class="schedule-item">
-                <h3>Monday - FPS Night</h3>
-                <p>7 PM - 10 PM EST</p>
-                <p>Playing Call of Duty and Valorant</p>
-            </div>
-            <div class="schedule-item">
-                <h3>Wednesday - RPG Adventures</h3>
-                <p>8 PM - 11 PM EST</p>
-                <p>Exploring Elden Ring and Cyberpunk 2077</p>
-            </div>
-            <div class="schedule-item">
-                <h3>Friday - Community Games</h3>
-                <p>6 PM - 9 PM EST</p>
-                <p>Viewer requests and multiplayer fun</p>
-            </div>
-            <div class="schedule-item">
-                <h3>Sunday - Chill Streams</h3>
-                <p>4 PM - 7 PM EST</p>
-                <p>Indie games and chat sessions</p>
-            </div>
+    <section id="streams">
+        <h2>Twitch Streams</h2>
+        <p>Check out my latest streams on EVE Frontier. I stream regularly – tune in for live gameplay!</p>
+        <div class="twitch-embed">
+            <!-- Replace 'ucfdarkstar' with your actual Twitch username -->
+            <iframe
+                src="https://player.twitch.tv/?channel=ucfdarkstar&parent=yourwebsite.com"
+                frameborder="0"
+                allowfullscreen="true"
+                scrolling="no"
+                height="100%"
+                width="100%">
+            </iframe>
         </div>
+        <p>Follow me on Twitch: <a href="https://www.twitch.tv/ucfdarkstar" style="color: #ff4081;">twitch.tv/ucfdarkstar</a></p>
     </section>
 
-    <!-- Social Links -->
-    <section id="social">
-        <h2>Connect with Me</h2>
-        <div class="social-icons">
-            <a href="https://twitch.tv/yourchannel" target="_blank">Twitch</a> <!-- Use Font Awesome or SVG for real icons -->
-            <a href="https://youtube.com/yourchannel" target="_blank">YouTube</a>
-            <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a>
-            <a href="https://discord.gg/yourserver" target="_blank">Discord</a>
-            <a href="https://instagram.com/yourhandle" target="_blank">Instagram</a>
-        </div>
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <p>Screenshots and highlights from EVE Frontier</p>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x300/121212/ffffff?text=EVE+Battle+1" alt="Battle 1"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x300/121212/ffffff?text=EVE+Exploration" alt="Exploration"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x300/121212/ffffff?text=EVE+Fleet" alt="Fleet"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x300/121212/ffffff?text=EVE+Battle+2" alt="Battle 2"></div>
     </section>
 
-    <!-- Footer -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Get in touch for collaborations, questions, or just to say hi!</p>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
     <footer>
-        <p>&copy; 2025 UCF DARKSTAR. All rights reserved. Built with passion and code.</p>
+        <p>&copy; 2025 UCF DARKSTAR. All rights reserved.</p>
+        <p>Built for EVE Frontier enthusiasts.</p>
     </footer>
-
-    <!-- JavaScript for Interactivity -->
-    <script>
-        // Simple Scroll Spy for Nav Highlighting
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('nav a');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 50;
-                if (pageYOffset >= sectionTop) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.href.includes(`#${current}`)) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Add active class style
-        const style = document.createElement('style');
-        style.innerHTML = `
-            nav a.active {
-                color: #00ffff;
-                border-bottom: 2px solid #ff00ff;
-            }
-        `;
-        document.head.appendChild(style);
-
-        // Toggle schedule items (example interactivity)
-        const scheduleItems = document.querySelectorAll('.schedule-item');
-        scheduleItems.forEach(item => {
-            item.addEventListener('click', () => {
-                item.classList.toggle('active');
-                // Could add more details here if needed
-            });
-        });
-    </script>
 
 </body>
 </html>
