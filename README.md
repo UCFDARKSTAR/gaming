@@ -1,4 +1,4 @@
-<!DOCTYPE html -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,14 +12,18 @@
             font-family: 'Roboto', sans-serif;
             background-color: #121212;
             color: #ffffff;
-            color: #000000;
             line-height: 1.6;
         }
 
         /* Dark Theme */
         body.dark-theme {
             background-color: #121212;
-            color: #e0e9e0;
+            color: #e0e0e0;
+            background-image: url('https://images.unsplash.com/photo-1475274047050-1d0c52c5a846?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1965&q=80');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
         }
 
         /* Navbar */
@@ -58,7 +62,7 @@
 
         /* Hero Section */
         .hero {
-            background: url('https://via.placeholder.com/1920x800/121212/ffffff?text=EVE+Frontier+Universe') no-repeat center/cover;
+            background: url('https://images.unsplash.com/photo-1464802686167-9600a4be5830?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80') no-repeat center/cover;
             height: 100vh;
             display: flex;
             align-items: center;
@@ -98,11 +102,12 @@
         }
 
         #about {
-            background-color: #1e1f1f;
+            background-color: rgba(30, 31, 31, 0.8);
         }
 
         #streams {
             text-align: center;
+            background-color: rgba(30, 31, 31, 0.8);
         }
 
         .twitch-embed {
@@ -115,6 +120,8 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1rem;
+            background-color: rgba(30, 31, 31, 0.8);
+            padding: 2rem;
         }
 
         .gallery-item {
@@ -129,6 +136,10 @@
 
         .gallery-item:hover img {
             transform: scale(1.1);
+        }
+
+        #contact {
+            background-color: rgba(30, 31, 31, 0.8);
         }
 
         #contact form {
@@ -150,7 +161,7 @@
             background-color: #ff4081;
             border: none;
             padding: 1rem;
-            color: pointer;
+            color: #ffffff;
             cursor: pointer;
         }
 
@@ -166,63 +177,6 @@
 
         /* JS for interactivity */
         /* This will be in separate file, but inline for now */
-        <script>
-            // Simple section scrolling
-            document.addEventListener('DOMContentLoaded', () => {
-                const navLinks = document.querySelectorAll('nav a');
-                navLinks.forEach(link => {
-                    link.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        const targetId = link.getAttribute('href').substring(1);
-                        const target = document.getElementById(targetId');
-                        if (target) {
-                            target.scrollIntoView({
-                                behavior: 'smooth'
-                            });
-                        }
-                    });
-                });
-
-                // Form submission placeholder
-                const form = document.querySelector('#contact form');
-                form.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    alert('Form submitted! (Placeholder)');
-                    form.reset();
-                });
-
-                // Gallery lightbox placeholder
-                const galleryItems = document.querySelectorAll('.gallery-item');
-                galleryItems.forEach(item => {
-                    item.addEventListener('click', () => {
-                        alert('Opening image in lightbox (placeholder)');
-                    });
-                });
-            });
-        </script>
-
-        /* Media Queries for Responsiveness */
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-            }
-
-            nav li {
-                margin: 0.5rem 0;
-            }
-
-            .hero h1 {
-                font-size: 3rem;
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-            }
-
-            .twitch-embed {
-                width: 100%;
-            }
-        }
     </style>
 </head>
 <body class="dark-theme">
@@ -255,9 +209,9 @@
         <h2>Twitch Streams</h2>
         <p>Check out my latest streams on EVE Frontier. I stream regularly – tune in for live gameplay!</p>
         <div class="twitch-embed">
-            <!-- Replace 'ucfdarkstar' with your actual Twitch username -->
+            <!-- Updated with your Twitch username 'ucf_darkstar' -->
             <iframe
-                src="https://player.twitch.tv/?channel=ucfdarkstar&parent=yourwebsite.com"
+                src="https://player.twitch.tv/?channel=ucf_darkstar&parent=yourwebsite.com"
                 frameborder="0"
                 allowfullscreen="true"
                 scrolling="no"
@@ -265,16 +219,16 @@
                 width="100%">
             </iframe>
         </div>
-        <p>Follow me on Twitch: <a href="https://www.twitch.tv/ucfdarkstar" style="color: #ff4081;">twitch.tv/ucfdarkstar</a></p>
+        <p>Follow me on Twitch: <a href="https://www.twitch.tv/ucf_darkstar" style="color: #ff4081;">twitch.tv/ucf_darkstar</a></p>
     </section>
 
     <section id="gallery">
         <h2>Gallery</h2>
-        <p>Screenshots and highlights from EVE Frontier</p>
-        <div class="gallery-item"><img src="https://via.placeholder.com/400x300/121212/ffffff?text=EVE+Battle+1" alt="Battle 1"></div>
-        <div class="gallery-item"><img src="https://via.placeholder.com/400x300/121212/ffffff?text=EVE+Exploration" alt="Exploration"></div>
-        <div class="gallery-item"><img src="https://via.placeholder.com/400x300/121212/ffffff?text=EVE+Fleet" alt="Fleet"></div>
-        <div class="gallery-item"><img src="https://via.placeholder.com/400x300/121212/ffffff?text=EVE+Battle+2" alt="Battle 2"></div>
+        <p>Screenshots and highlights from EVE Frontier (using space-themed images as placeholders)</p>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1447433589675-4aaa569f3e05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80" alt="Space Nebula 1"></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1539248091023-6a5b0b7c3994?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80" alt="Space Stars"></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1447433819943-74a20887a81e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80" alt="Galaxy View"></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1462331940025-496df16fa74b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" alt="Nebula 2"></div>
     </section>
 
     <section id="contact">
@@ -289,9 +243,44 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 UCF DARKSTAR. All rights reserved.</p>
+        <p>© 2025 UCF DARKSTAR. All rights reserved.</p>
         <p>Built for EVE Frontier enthusiasts.</p>
     </footer>
+
+    <script>
+        // Simple section scrolling
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href').substring(1);
+                    const target = document.getElementById(targetId);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Form submission placeholder
+            const form = document.querySelector('#contact form');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Form submitted! (Placeholder)');
+                form.reset();
+            });
+
+            // Gallery lightbox placeholder
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    alert('Opening image in lightbox (placeholder)');
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
